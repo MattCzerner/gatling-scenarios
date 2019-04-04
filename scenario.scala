@@ -47,11 +47,11 @@ object Walk {
     .headers(headers_ajax)
 
   val categoryListFilterParameters = http("Category list filtering by parameters")
-    .get("/electronics/?=product_filter_form[parameters][3][]=6&product_filter_form[parameters][4][]=8&product_filter_form[parameters][4][]=12")
+    .get("/electronics/?product_filter_form[parameters][5][]=8&product_filter_form[parameters][3][]=6&product_filter_form[parameters][1][]=2&product_filter_form[parameters][1][]=14&product_filter_form[parameters][2][]=4&product_filter_form[parameters][4][]=8")
     .headers(headers_ajax)
 
   val categoryListFilterAllFilters = http("Category list filtering by all possible filters")
-    .get("/electronics/?product_filter_form[minimalPrice]=200&product_filter_form[maximalPrice]=30000&product_filter_form[inStock]=1&product_filter_form[brands][]=5&product_filter_form[parameters][5][]=8&product_filter_form[parameters][1][]=2&product_filter_form[parameters][1][]=14&product_filter_form[parameters][4][]=8")
+    .get("/electronics/?product_filter_form[minimalPrice]=1000.00&product_filter_form[maximalPrice]=9000.00&product_filter_form[inStock]=1&product_filter_form[flags][]=3&product_filter_form[brands][]=5&product_filter_form[parameters][5][]=8&product_filter_form[parameters][3][]=6&product_filter_form[parameters][1][]=2&product_filter_form[parameters][1][]=14&product_filter_form[parameters][2][]=4&product_filter_form[parameters][4][]=8")
     .headers(headers_ajax)
 
   def cartAdd(productId: Int) = http("Add product to cart")
